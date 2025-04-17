@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   client.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: achajar <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 17:10:26 by achajar           #+#    #+#             */
+/*   Updated: 2025/04/17 17:10:35 by achajar          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "minitalk.h"
 
 static volatile sig_atomic_t	g_signal_acknowledged = 0;
@@ -11,7 +21,7 @@ static void	client_signal_handler(int sig, siginfo_t *info, void *context)
 		g_signal_acknowledged = 1;
 	else if (sig == SIGUSR2)
 	{
-		ft_putstr("\033[1;32mserver confirmed message received successfully.\033[0m\n");
+		ft_putstr("server confirmed message received successfully.\n");
 		exit(0);
 	}
 }

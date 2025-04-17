@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: achajar <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/17 17:10:40 by achajar           #+#    #+#             */
+/*   Updated: 2025/04/17 17:10:42 by achajar          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
 static void	handle_byte_received(int *bit_count_ptr, char *byte_ptr,
@@ -33,7 +45,7 @@ static void	server_signal_handler(int sig, siginfo_t *info, void *context)
 	received_bit_count++;
 	if (received_bit_count == 8)
 		handle_byte_received(&received_bit_count, &current_byte,
-				current_sender_pid);
+			current_sender_pid);
 	usleep(90);
 	kill(info->si_pid, SIGUSR1);
 }

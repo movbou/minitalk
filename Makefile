@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: achajar <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/04/17 17:11:20 by achajar           #+#    #+#              #
+#    Updated: 2025/04/17 17:11:22 by achajar          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc -Wall -Werror -Wextra
 
 GREEN 	= \033[1;32m
@@ -14,17 +26,17 @@ all: $(NAME_CLIENT) $(NAME_SERVER)
 
 $(NAME_CLIENT): client.c
 	@$(CC) client.c utils.c -o $(NAME_CLIENT)
-	@echo "$(GREEN)Client built successfully!✨$(RC)"
+	@echo "$(GREEN)Client built successfully!$(RC)"
 
 $(NAME_SERVER): server.c
 	@$(CC) server.c utils.c -o $(NAME_SERVER)
-	@echo "$(BLUE)Server built successfully!✨$(RC)"
+	@echo "$(BLUE)Server built successfully!$(RC)"
 
 clean:
 	@rm -f $(NAME_CLIENT) $(NAME_SERVER)
-	@echo "$(YELLOW)Cleaned up!✨$(RC)"
+	@echo "$(YELLOW)Cleaned up!$(RC)"
 fclean: clean
-	@echo "$(RED)All files are removed!🗑️$(RC)"
+	@echo "$(RED)All files are removed!$(RC)"
 
 re: fclean all
 
